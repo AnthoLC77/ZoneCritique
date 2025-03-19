@@ -51,20 +51,24 @@ ng serve
 
 L'application sera accessible sur http://localhost:4200.
 
-Déploiement avec Docker
+# Déploiement avec Docker
 
-1. Création des Dockerfiles
+### 1. Création des Dockerfiles
 
-Backend - Dockerfile (backend/Dockerfile)
+**Backend - Dockerfile (backend/Dockerfile)**
 
+```bash
 FROM eclipse-temurin:21-jdk
 WORKDIR /app
 COPY target/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
-Frontend - Dockerfile (frontend/Dockerfile)
+```
 
+**Frontend - Dockerfile (frontend/Dockerfile)**
+
+```bash
 FROM node:22.12.0-alpine
 WORKDIR /app
 COPY package*.json ./
@@ -74,9 +78,12 @@ RUN npm run build --configuration=production
 CMD ["npx", "http-server", "dist/frontend"]
 EXPOSE 4200
 
-2. Création du fichier docker-compose
+```
+
+### 2. Création du fichier docker-compose
 
 Créer un fichier docker-compose.yml à la racine du projet :
+```bash
 
     version: '3.8'
 
@@ -116,14 +123,20 @@ services:
 volumes:
   mysql_data:
 
+```
 
-3. Lancer les services
+### 3. Lancer les services
 
+```bash
 # Construire et lancer les conteneurs
 docker-compose up --build -d
+```
 
 L'application sera accessible sur http://localhost:4200 et l'API sur http://localhost:8080.
 
-4. Arrêter les conteneurs
+### 4. Arrêter les conteneurs
+```bash
 
 docker-compose down
+
+```
