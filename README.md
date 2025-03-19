@@ -18,10 +18,11 @@ Avant de commencer, assurez-vous d'avoir installé les outils suivants :
 
 
 
-Installation et exécution en local
+## Installation et exécution en local
 
-1. Backend (Spring Boot)
+### 1. Backend (Spring Boot)
 
+```bash
 # Cloner le projet
 cd backend
 
@@ -32,8 +33,11 @@ cd backend
 # Lancer le projet
 mvn spring-boot:run
 
-2. Frontend (Angular)
+```
 
+### 2. Frontend (Angular)
+
+```bash
 # Cloner le projet
 cd frontend
 
@@ -42,6 +46,8 @@ npm install
 
 # Lancer l'application
 ng serve
+
+```
 
 L'application sera accessible sur http://localhost:4200.
 
