@@ -1,0 +1,76 @@
+[
+    {
+      "id" : "1",
+      "titre": "The witcher 3",
+      "image" : "https://image.api.playstation.com/vulcan/ap/rnd/202211/0711/kh4MUIuMmHlktOHar3lVl6rY.png",
+      "imageBg" : "https://i.ytimg.com/vi/OFOr9es1ljg/maxresdefault.jpg",
+      "dateDeSortie" : "18/05/2015",
+      "resume" : "The Witcher 3 est un RPG en monde ouvert, dans un univers Fantasy hautement scénarisé où vos choix sont décisifs. Vous incarnez un tueur de monstres professionnel chargé de retrouver l'enfant de la prophétie dans un vaste monde riche en cités marchandes, cols périlleux et grottes oubliées.",
+      "typeDeMedia" : "Jeu video",
+      "noteGeneral" : "94",
+      "noteAmis" : "98"
+    },
+    {
+      "id" : "2",
+      "titre": "Kingdom Come Délivrance",
+      "image" : "https://cdn1.epicgames.com/undefined/offer/EGS_WarhorseStudios_KingdomComeDeliverance_S4-510x680-ec915782c8a2d6f1d64c028dd74a398f.jpg",
+      "imageBg" : "https://image.api.playstation.com/vulcan/img/rnd/202010/1520/RlwX8AhKAd5nxqJRBNgzpSR7.png",
+      "dateDeSortie" : "13/02/2018",
+      "resume" : "Jeu en vue à la première personne, Kingdom Come : Deliverance prend place dans un univers médiéval très réaliste et aux détails soignés. Il propose de nombreux éléments qui sont à la base de tout RPG qui se respecte, à savoir : systèmes de craft et de réputation, combats en duel, etc.",
+      "typeDeMedia" : "Jeu video",
+      "noteGeneral": "79",
+      "noteAmis" : "98"
+    },
+    {
+      "id" : "3",
+      "titre": "A Plague Tale: Requiem",
+      "image" : "https://cdn-prod.scalefast.com/public/assets/user/13772687/image/7046bdaa4bc97d7e0ca2f5147041ba0d.jpg",
+      "imageBg" : "https://assets.xboxservices.com/assets/ab/2c/ab2c00a7-1249-498b-b233-df01f5bc165f.jpg?n=A-Plague-Tale-Requiem_Gallery_1350x759_03.jpg",
+      "dateDeSortie" : "17/10/2022",
+      "resume" : "Après une première aventure maintes fois récompensée, embarquez avec Amicia et son frère Hugo dans un nouveau voyage intense en quête d’espoir, traqués sans relâche par une terrifiante malédiction.",
+      "typeDeMedia" : "Jeu video",
+      "noteGeneral": "33",
+      "noteAmis" : "65"
+    },
+    {
+      "id" : "4",
+      "titre": "Cyberpunk 2077",
+      "image" : "https://image.jeuxvideo.com/medias-sm/163835/1638354762-5863-jaquette-avant.gif",
+      "dateDeSortie" : "17/10/2020",
+      "resume" : "Cyberpunk 2077 est un action-RPG en monde ouvert qui se déroule à Night City, une mégalopole obsédée par le pouvoir, la séduction et les modifications corporelles. Vous incarnez V, mercenaire hors-la-loi à la recherche d’un implant unique qui serait la clé de l’immortalité.",
+      "typeDeMedia" : "Jeu video",
+      "noteGeneral": "55",
+      "noteAmis" : "90"
+    },
+    {
+      "id" : 5,
+      "titre": "Kingdom Come Délivrance II",
+      "image" : "https://media.senscritique.com/media/000022499397/0/kingdom_come_deliverance_2.jpg",
+      "imageBg" : "https://i.computer-bild.de/imgs/1/5/5/0/0/6/9/5/Kingdom-Come-2--Deliverance-2---mit-wieder-Heinrich-nach-Boehmen-3567-3768x2120-322f47b4e6f93372.jpg",
+      "dateDeSortie" : "04/02/2025",
+      "resume": "Kingdom Come Deliverance 2 est un action-RPG à la première personne qui se déroule dans le chaos de la guerre civile de la Bohême du XVe siècle. Vous incarnez Henry de Skalice qui embarque dans une aventure épique entre histoire de vengeance, trahison et découverte. De simple fils de forgeron à aventurier téméraire qui est mené à la cour des rois, il continue sa quête dans ce monde aussi cruel que magnifique.",
+      "typeDeMedia" : "Jeu video",
+      "noteGeneral": "75",
+      "noteAmis" : "84"
+    },
+    {
+      "id" : 6,
+      "titre": "Little Nightmare III",
+      "image" : "https://assets-prd.ignimgs.com/2023/08/24/nightmares3-1692881952367.jpg",
+      "dateDeSortie" : "18/05/2015",
+      "resume" : "Dans Little Nightmares III, vous accompagnez Low et Alone, dans leur voyage vers la sortie du Nulle-Part. Perdus au cœur de la Spirale et de ses lieux plus perturbants les uns que les autres, les deux amis devront coopérer pour survivre dans un monde périlleux empli d'illusions et échapper à la terrible menace tapie dans l'ombre.",
+      "typeDeMedia" : "Jeu video",
+      "noteGeneral": "88",
+      "noteAmis" : "82"
+    },
+    {
+      "id" : 7,
+      "titre": "The witch",
+      "image" : "https://media.senscritique.com/media/000021197391/0/the_witch.png",
+      "dateDeSortie" : "15/06/2016",
+      "resume" : "1630, en Nouvelle-Angleterre. William et Katherine, un couple dévot, s’établit à la limite de la civilisation, menant une vie pieuse avec leurs cinq enfants et cultivant leur lopin de terre au milieu d’une étendue encore sauvage. La mystérieuse disparition de leur nouveau-né et la perte soudaine de leurs récoltes vont rapidement les amener à se dresser les uns contre les autres…",
+      "typeDeMedia" : "Film",
+      "noteGeneral": "72",
+      "noteAmis" : "65"
+    }
+  ]

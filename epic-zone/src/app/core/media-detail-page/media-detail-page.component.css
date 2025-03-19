@@ -1,0 +1,18 @@
+img {
+    height: 500px;
+    width: 380px;
+}
+
+.icon-button {
+    opacity: 0.5; /* Icônes semi-transparentes par défaut */
+    transition: opacity 0.3s ease; /* Animation fluide pour le changement */
+  }
+  
+.icon-button:hover {
+    opacity: 1; /* Icônes complètement visibles au survol */
+}
+
+.icon-button.active {
+    opacity: 1; /* Reste visible si actif */
+    transform: scale(1.1); /* Optionnel : un léger agrandissement pour indiquer l'état actif */
+}

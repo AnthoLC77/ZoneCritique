@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class=" relative w-9/12 mx-auto mt-10 flex flex-col justify-center">
+    <app-slider [categorie]="'Nouveauté'"></app-slider>
+    <app-slider [categorie]="'Bande dessinée du moment'"></app-slider>
+    <app-slider [categorie]="'Films du moment'"></app-slider>
+    <app-slider [categorie]="'Jeu Vidéo du moment'"></app-slider>
+    <div class="relative group">
+        <button
+          *ngIf="showScrollButton"
+          class="fixed right-20 bottom-14 z-50 p-1 border-2 rounded-full"
+          (click)="scrollToTop()">
+          <fa-icon class="text-white m-2 text-xl " [icon]="faArrowUp"></fa-icon>
+        </button>
+      
+        <!-- Tooltip -->
+      </div>
+      
+</div>
+

@@ -1,0 +1,6 @@
+.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Change la couleur d'arrière-plan */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre */
+    transition: all 0.3s ease; /* Transition fluide */
+    min-height: 20px;
+  }

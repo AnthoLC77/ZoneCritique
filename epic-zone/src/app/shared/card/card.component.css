@@ -1,0 +1,24 @@
+
+.progress-circle {
+    transform: rotate(-90deg); /* Rotation pour commencer en haut */
+  }
+  
+  .circle-bg {
+    stroke-linecap: round; /* Optionnel : rend les extrémités arrondies */
+  }
+  
+  .circle-progress {
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.3s ease; /* Animation fluide */
+  }
+  
+  .circle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  

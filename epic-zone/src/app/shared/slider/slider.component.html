@@ -1,0 +1,44 @@
+<div class="my-5">
+    <div class="flex justify-between items-baseline">
+      <div class="w-11/12">
+        <h1 class="text-xl">{{ categorie }}</h1>
+        <hr class="my-3 border-t border-white mb-6">
+      </div>
+      <div class="flex gap-2">
+        <button
+          (click)="goToPrevious()"
+          [disabled]="isAtStart()"
+          [ngStyle]="{
+            'opacity': isAtStart() ? '0.5' : '1',
+            'pointer-events': isAtStart() ? 'none' : 'auto'
+          }">
+          <fa-icon class="text-white p-2 border-2 rounded-full" [icon]="faArrowLeft"></fa-icon>
+        </button>
+        <button
+          (click)="goToNext()"
+          [disabled]="isAtEnd()"
+          [ngStyle]="{
+            'opacity': isAtEnd() ? '0.5' : '1',
+            'pointer-events': isAtEnd() ? 'none' : 'auto'
+          }">
+          <fa-icon class="text-white p-2 border-2 rounded-full" [icon]="faArrowRight"></fa-icon>
+        </button>
+      </div>
+    </div>
+  
+    <!-- Swiper avec breakpoints pour la responsivité -->
+    <swiper-container 
+      #swiper 
+      [slides-per-view]="5" 
+      class="gap-3"
+      [breakpoints]="{
+        '640': { 'slidesPerView': 2, 'spaceBetween': 10 },
+        '768': { 'slidesPerView': 3, 'spaceBetween': 15 },
+        '1024': { 'slidesPerView': 5, 'spaceBetween': 20 }
+      }">
+      <swiper-slide class="slide" *ngFor="let media of mediaList">
+        <app-card [media]="media"></app-card>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+  

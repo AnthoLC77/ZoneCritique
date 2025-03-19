@@ -1,0 +1,158 @@
+<header [ngClass]="{scrolled: isScrolled}" 
+    class="sticky top-0 z-50 bg-background flex justify-center items-end min-h-24 p-2 font-medium">
+
+    <div *ngIf="!isLargeScreen" class="flex flex-row items-center justify-between p-4 lg:hidden w-full">
+      <!-- Bouton menu burger -->
+      <button (click)="toggleMobileMenu()" class="text-white mr-4">
+        <fa-icon class="text-2xl" [icon]="isMobileMenuOpen ? icons.faTimes : icons.faBars"></fa-icon>
+      </button>
+    
+      <!-- Logo -->
+      <a *ngIf="!isSearchInputVisible" routerLink="/">
+        <img  src="favicon.ico" alt="Logo" class="w-10 h-10">
+      </a>
+    
+      <!-- Icône de recherche -->
+      <button *ngIf="!isSearchInputVisible" (click)="toggleInputVisible()" class="text-white">
+        <fa-icon class="mr-2 text-2xl" [icon]="icons.faMagnifyingGlass"></fa-icon>
+      </button>
+
+      <div *ngIf="isSearchInputVisible" class="w-full relative">
+        <input
+          [(ngModel)]="searchQuery"
+          (input)="onSearch()"
+          type="text"
+          placeholder="Rechercher..."
+          class="w-full p-2 pr-10 rounded-md text-black transition-all duration-500 relative"
+        >
+        <fa-icon 
+          [icon]="icons.faTimes" 
+          class="absolute text-xl right-2 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer" 
+          (click)="toggleInputVisible()">
+        </fa-icon>
+      </div>
+      <div 
+      class="absolute top-full left-0 w-full bg-[#1a2238] rounded-md shadow-lg"
+      *ngIf="searchResults.length > 0">
+      <ul class="w-full p-2">
+        <li 
+        class="relative flex w-full p-2 h-22 items-center border-opacity-30 cursor-pointer hover:bg-[#2c3e50] transition hover:scale-105 last:border-b-0"
+        *ngFor="let media of searchResults"
+        (click)="goToDetailMedia(media.id)">
+        <img class="w-20 h-20 object-contain" [src]="media.image" alt="image du media">
+        <div class="ml-4">
+          <p>{{media.titre}}</p>
+          <p class="inline p-1 rounded-sm">{{media.typeDeMedia}}</p>
+        </div>
+        <p class="absolute right-5 p-2 rounded-sm" 
+        [ngStyle]="{ 'background' : getNoteColor(media.noteGeneral)}">
+        {{media.noteGeneral}}
+      </p>
+    </li>
+  </ul>
+</div>
+</div>
+    
+    <!-- Menu mobile avec effet de rideau -->
+    <div *ngIf="isMobileMenuOpen && !isLargeScreen" 
+         class="fixed inset-0 bg-background text-white flex flex-col p-6 space-y-6 z-50 transform translate-x-10 transition-transform duration-1000 ease-in-out"
+         [ngClass]="{ 'w-full': isMobileMenuOpen, 'w-0': !isMobileMenuOpen }">
+      
+      <!-- Bouton de fermeture -->
+      <button (click)="toggleMobileMenu()" class="self-start text-white text-2xl">
+        <fa-icon [icon]="icons.faTimes"></fa-icon>
+      </button>
+    
+      <!-- Affichage de la barre de recherche -->
+      
+    
+      <!-- Liens du menu -->
+      <ul class="flex flex-col space-y-4 w-full">
+        <li><a routerLink="/" class="hover:text-yellow-500 transition">Accueil</a></li>
+        <li><a routerLink="/nouveautes" class="hover:text-yellow-500 transition">Nouveauté</a></li>
+        <li><a routerLink="/films" class="hover:text-yellow-500 transition">Films</a></li>
+        <li><a routerLink="/jeux-video" class="hover:text-yellow-500 transition">Jeux Vidéo</a></li>
+        <li><a routerLink="/bd" class="hover:text-yellow-500 transition">Bandes Dessinées</a></li>
+        <li><a routerLink="/bd" class="hover:text-yellow-500 transition">Connexion</a></li>
+      </ul>
+
+  </div>
+
+
+
+    <!-- <div class="flex flex-col md:flex-row items-center gap-8 w-full md:w-9/12 justify-between"> -->
+
+    <div *ngIf="isLargeScreen" class="flex flex-col md:flex-row items-center gap-8 w-full md:w-9/12 justify-between">
+      <!-- Logo Section -->
+      <div class="mb-4 md:mb-0">
+        <a [routerLink]="'/'" routerLinkActive="router-link-active">
+            <img src="favicon.ico" alt="Logo" class="w-12 md:w-16">
+        </a>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="flex flex-wrap gap-4 md:gap-8 text-sm md:text-base justify-center">
+        <li class="hover:text-yellow-500 cursor-pointer">Nouveauté</li>
+        <li class="hover:text-yellow-500 cursor-pointer">Bande dessinée</li>
+        <li class="hover:text-yellow-500 cursor-pointer">Films</li>
+        <li class="hover:text-yellow-500 cursor-pointer">Jeu Vidéo</li>
+    </ul>
+
+    <!-- Search Bar and Buttons -->
+    <div class="flex flex-col md:flex-row items-center gap-5 w-full md:w-auto">
+        <div class="relative w-full md:w-auto">
+            <!-- Search Input -->
+            <div class="flex items-center relative bg-white rounded-md search-bar">
+                <input
+                    [(ngModel)]="searchQuery"
+                    (input)="onSearch()"
+                    type="text"
+                    placeholder="Rechercher..."
+                    class="text-black rounded-l-md w-full p-2 pr-10 focus:outline-none">
+                <fa-icon
+                    *ngIf="searchQuery"
+                    class="absolute right-14 text-gray-400 cursor-pointer hover:text-red-500"
+                    [icon]="icons.faTimes"
+                    (click)="resetInput()">
+                </fa-icon>
+                <div class="bg-yellow-button px-4 py-2 rounded-r-md cursor-pointer hover:bg-yellow-500 transition">
+                    <fa-icon class="text-black" [icon]="icons.faMagnifyingGlass"></fa-icon>
+                </div>
+            </div>
+
+            <!-- Dropdown Search Results -->
+            <div 
+                class="absolute top-full left-0 w-full bg-[#1a2238] rounded-md shadow-lg search-bar-results"
+                *ngIf="searchResults.length > 0">
+                <ul class="w-full p-2">
+                    <li 
+                        class="relative flex w-full p-2 h-22 items-center border-opacity-30 cursor-pointer hover:bg-[#2c3e50] transition hover:scale-105 last:border-b-0"
+                        *ngFor="let media of searchResults"
+                        (click)="goToDetailMedia(media.id)">
+                        <img class="w-20 h-20 object-contain" [src]="media.image" alt="image du media">
+                        <div class="ml-4">
+                            <p>{{media.titre}}</p>
+                            <p class="inline p-1 rounded-sm">{{media.typeDeMedia}}</p>
+                        </div>
+                        <p class="absolute right-5 p-2 rounded-sm" 
+                           [ngStyle]="{ 'background' : getNoteColor(media.noteGeneral)}">
+                           {{media.noteGeneral}}
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Connexion Button -->
+        <button 
+            class="bg-yellow-button p-2 rounded-md text-black hover:bg-yellow-500 transition w-full md:w-auto" (click)="openLoginModal()">
+            Connexion
+        </button>
+        <button 
+            class="bg-yellow-button p-2 rounded-md text-black hover:bg-yellow-500 transition w-full md:w-auto" (click)="openSignupModal()">
+            inscription
+        </button>
+        <app-login-modal [isModalOpen]="isModalOpen" [currentView]="currentView" (close)="closeModal()"></app-login-modal>
+    </div>
+    </div>
+</header>

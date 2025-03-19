@@ -1,0 +1,60 @@
+<div *ngIf="isModalOpen" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 text-black" (click)="onBackgroundClick($event)">
+
+  <!--LOGIN-->
+  <div *ngIf="currentView === 'login'" class="bg-white p-6 rounded-lg shadow-lg w-96 relative  animate-slideUp-animation"
+       [ngClass]="{ 'opacity-100 translate-y-0': isModalOpen, 'opacity-0 translate-y-full': !isModalOpen }"
+       (click)="$event.stopPropagation()">
+    <h2 class="text-xl font-bold mb-4 text-black">Connexion 👋</h2>
+    <form (submit)="closeModal()">
+      <div>
+          <label for="email">Email</label>
+          <input type="email" placeholder="montana@exemple.com" class="w-full p-2 border rounded mb-2" required>
+      </div>
+      <div class="mt-2">
+          <div class="flex justify-between">
+              <label for="password">Mot de passe</label>
+              <a class="text-blue-400" href="">Mot de passe oublié ?</a>
+          </div>
+          <input type="password" placeholder="*********" class="w-full p-2 border rounded mb-4" required>
+      </div>
+      <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Se connecter</button>
+    </form>
+
+    <button class="absolute top-1 right-1 text-xl" (click)="closeModal()">
+      <fa-icon [icon]="icons.faCircleXmark"></fa-icon>
+    </button>
+    <p class="w-full text-center my-3">Vous n'avez pas encore un compte ?</p>
+    <button type="button" class="w-full bg-yellow-button rounded text-white p-2" (click)="switchModal('signup')">Inscription</button>
+  </div>
+
+  <!--SignUp-->
+  <div *ngIf="currentView === 'signup'" class="bg-white p-6 rounded-lg shadow-lg w-96 relative animate-slideUp-animation">
+    <h2 class="text-xl font-bold mb-4 text-black">Inscription 👋</h2>
+    <form (submit)="closeModal()">
+      <div>
+        <label for="name">Prenom</label>
+        <input type="text" placeholder="John" class="w-full p-2 border rounded mb-2">
+      </div>
+      <div>
+        <label for="name">Nom</label>
+        <input type="text" placeholder="Doe" class="w-full p-2 border rounded mb-2">
+      </div>
+      <div>
+        <label for="name">Email</label>
+        <input type="email" placeholder="Johndoe@exemple.com" class="w-full p-2 border rounded mb-2">
+      </div>
+      <div>
+        <label for="name">Mot de passe</label>
+        <input type="password" placeholder="******" class="w-full p-2 border rounded mb-2">
+      </div>
+      <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">S'inscrire</button>
+    </form>
+    <button class="absolute top-1 right-1 text-xl" (click)="closeModal()">
+      <fa-icon [icon]="icons.faCircleXmark"></fa-icon>
+    </button>
+    <p class="w-full text-center my-3">Vous n'avez pas encore un compte ?</p>
+    <button type="button" class="w-full bg-yellow-button rounded text-white p-2" (click)="switchModal('login')">Inscription</button>
+  </div>
+</div>
+
+  

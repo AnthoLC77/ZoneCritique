@@ -1,0 +1,114 @@
+<div class="w-60 rounded-md bg-[#1a2238]/40 cursor-pointer shadow-xl">
+  <div class="pt-5 pr-3 pl-3">
+    <div class="relative group w-full">
+      <img [src]="media.image" alt="image du media" class="w-full object-cover h-96 rounded-md">
+      
+      <div class="absolute inset-0 bg-black/50 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all overflow-hidden">
+          <a class="text-lg font-bold transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 hover:text-yellow-400" [routerLink]="['/details', media.id]" routerLinkActive="router-link-active" >
+            Détails
+          </a>
+        
+        <div class="bg-[#1a2238]/40 ">
+          <fa-icon *ngIf="isIconStates[0]" class="text-white absolute top-3 right-9" [icon]="faRegularEye" (click)="toggleIcon(0)"></fa-icon>
+          <fa-icon *ngIf="!isIconStates[0]" class="text-white absolute top-3 right-9" [icon]="faEye" (click)="toggleIcon(0)"></fa-icon>
+        </div>
+        
+        <fa-icon *ngIf="isIconStates[1]" class="text-white absolute top-3 right-3" [icon]="faSolidHeart" (click)="toggleIcon(1)"></fa-icon>
+        <fa-icon *ngIf="!isIconStates[1]" class="text-white absolute top-3 right-3 font" [icon]="faRegularHeart" (click)="toggleIcon(1)"></fa-icon>
+        
+      </div>
+    </div>
+  </div>
+  
+    <div class="flex flex-col items-center ">
+        <div class="flex flex-col justify-center h-28 pb-2 pl-2 pr-2">
+            <h3 class="font-bold text-center">{{ media.titre }}</h3>
+            <span class=" text-primary p-1 text-center">{{ media.typeDeMedia }}</span>
+        </div>
+        <hr class="w-full opacity-25">
+        <div class="flex justify-center relative group w-full max-w-md p-5">
+            <!-- Contenu principal -->
+            <div class="flex justify-end items-center blur-none group-hover:blur-sm transition-all">
+              <!-- Bloc "General" -->
+              <div>
+                <p class="opacity-60">General</p>
+                <div class="relative w-16 h-16 mt-2">
+                  <svg class="progress-circle" viewBox="0 0 36 36">
+                    <!-- Cercle de fond -->
+                    <circle
+                      class="circle-bg"
+                      cx="18"
+                      cy="18"
+                      r="16"
+                      fill="none"
+                      stroke="#e5e5e5"
+                      stroke-width="2">
+                    </circle>
+                    <!-- Cercle de progression -->
+                    <circle
+                      class="circle-progress"
+                      cx="18"
+                      cy="18"
+                      r="16"
+                      fill="none"
+                      [attr.stroke]="getNoteColor(media.noteGeneral)"
+                      stroke-width="2"
+                      stroke-dasharray="100"
+                      [attr.stroke-dashoffset]="100 - media.noteGeneral">
+                    </circle>
+                  </svg>
+                  <div class="circle-text text-white">
+                    <p class="text-white">{{ media.noteGeneral }}</p>
+                  </div>
+                </div>
+              </div>
+              <hr class="w-5 rotate-90 mx-3">
+              <!-- Bloc "Amis" -->
+              <div class="flex flex-col items-center">
+                <p class="opacity-60">Amis</p>
+                <div class="relative w-16 h-16 mt-2">
+                  <svg class="progress-circle" viewBox="0 0 36 36">
+                    <!-- Cercle de fond -->
+                    <circle
+                      class="circle-bg"
+                      cx="18"
+                      cy="18"
+                      r="16"
+                      fill="none"
+                      stroke="#e5e5e5"
+                      stroke-width="2">
+                    </circle>
+                    <!-- Cercle de progression -->
+                    <circle
+                      class="circle-progress"
+                      cx="18"
+                      cy="18"
+                      r="16"
+                      fill="none"
+                      [attr.stroke]="getNoteColor(media.noteAmis)"
+                      stroke-width="2"
+                      stroke-dasharray="100"
+                      [attr.stroke-dashoffset]="100 - media.noteAmis">
+                    </circle>
+                  </svg>
+                  <div class="circle-text text-white">
+                    <p class="text-white">{{ media.noteAmis }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <!-- Overlay avec texte "Détails" -->
+            <div class="absolute inset-0 bg-black/50 text-white w-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all overflow-hidden">
+              <p class="text-lg font-bold transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 hover:text-yellow-400">
+                Détails
+              </p>
+            </div>
+            
+          </div>   
+    </div>
+</div>
+
+
+  
+  

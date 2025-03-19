@@ -1,0 +1,21 @@
+<div class="flex space-x-1 items-center justify-center">
+  <span
+    *ngFor="let star of stars; let i = index"
+    class="text-4xl cursor-pointer transition-colors"
+    [class.text-gray-400]="i >= (hoveredRating || rating)"
+    [class.text-yellow-button]="i < (hoveredRating || rating)"
+    (click)="setRating(i + 1)"
+    (mouseover)="hoverRating(i + 1)"
+    (mouseleave)="hoverRating(0)"
+  >
+    ★
+  </span>
+  <p class=" flex items-center justify-center mt-2 text-sm text-white font-bold border-2 w-10 h-10 rounded-full p-3"
+    [ngClass]="{
+      'bg-green-500 border-green-500': (rating >= 8 || hoveredRating >= 8), 
+      'bg-yellow-500 border-yellow-500': (rating >= 5 && rating < 8) || (hoveredRating >= 5 && hoveredRating < 8),
+      'bg-transparent border-white': !(rating || hoveredRating)
+    }">
+    {{ hoveredRating || rating }}
+  </p>
+</div>

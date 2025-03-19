@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "titre": "Film Exemple 1",
+        "type": "FILM",
+        "resume": "Un résumé captivant du film.",
+        "dateSortie": "2025-02-12"
+    },
+    {
+        "id": 2,
+        "titre": "Jeu Vidéo Exemple 1",
+        "type": "JEUX_VIDEO",
+        "resume": "Un résumé du jeu vidéo.",
+        "dateSortie": "2025-01-15"
+    },
+    {
+        "id": 3,
+        "titre": "BD Exemple 1",
+        "type": "BD",
+        "resume": "Un résumé de la BD.",
+        "dateSortie": "2025-03-01"
+
+    }
+]
+

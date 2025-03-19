@@ -1,0 +1,40 @@
+<div class="flex justify-center relative w-full max-w-md ">
+    <!-- Contenu principal -->
+    <div class="flex justify-end items-center blur-none">
+      <!-- Bloc "General" -->
+      <div class="flex flex-row-reverse items-center">
+        <div class="flex flex-col">
+          <p class="opacity-60 text-center">{{ label }}</p>
+          <p>1345 votes</p>
+        </div>
+        <div class="relative w-16 h-16 mt-2">
+          <svg class="progress-circle" viewBox="0 0 36 36">
+            <!-- Cercle de fond -->
+            <circle
+              class="circle-bg"
+              cx="18"
+              cy="18"
+              [attr.r]="radius"
+              fill="none"
+              stroke="#e5e5e5"
+              stroke-width="2">
+            </circle>
+            <!-- Cercle de progression -->
+            <circle
+              class="circle-progress"
+              cx="18"
+              cy="18"
+              [attr.r]="radius"
+              fill="none"
+              [attr.stroke-dasharray]="circumference"
+              [attr.stroke-dashoffset]="getDashOffset()"
+              [attr.stroke]="getNoteColor(note)"
+              stroke-width="2">
+            </circle>
+          </svg>
+          <div class="circle-text text-white">
+            <p class="text-white">{{ note }}</p>
+          </div>
+        </div>
+      </div>
+    </div>

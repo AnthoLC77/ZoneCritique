@@ -1,0 +1,74 @@
+<app-header></app-header>
+<div class="absolute w-full h-96">
+    <div 
+        class="absolute top-5 left-0 w-full h-72 bg-cover bg-center filter backdrop-blur-md"
+        [style.backgroundImage]="'url(' + media?.imageBg + ')'">
+        <div class="absolute inset-0 bg-black opacity-65"></div>
+    </div>
+</div>
+<div class="relative w-9/12 top-customTop mx-auto mt-20 flex justify-start h-auto">
+    <div class="w-full">
+        <h1 class="text-5xl font-black mb-4">{{ media?.titre }}</h1>
+        <hr class="opacity-25 z-0 ">
+        <div class="flex items-center">
+            <app-progress-circle [note]="media?.noteGeneral || 0" [label]="'General'"></app-progress-circle>
+            <hr class="w-5 rotate-90 mx-3">
+            <app-progress-circle [note]="media?.noteAmis || 0" [label]="'Amis'"></app-progress-circle>
+            <hr class="w-5 rotate-90 mx-3">
+            <app-rating-bar></app-rating-bar>
+            <hr class="w-5 rotate-90 mx-3">
+            <div class="flex items-baseline max-h-56">
+                <div>
+                    <button
+                        class="icon-button text-white fa-sm m-2 p-2 border-2 rounded-full"
+                        [ngClass]="{ 'active': isActiveStates[0] }"
+                        (click)="toggleIcon(0)">
+                        <fa-icon *ngIf="isIconStates[0]" [icon]="faFlagSolid"></fa-icon>
+                        <fa-icon *ngIf="!isIconStates[0]" [icon]="faFlagRegular"></fa-icon>
+                    </button>
+                  </div>
+                  <div class="mx-2">
+                    <button 
+                        class="icon-button text-white fa-sm m-2 p-2 border-2 rounded-full"
+                        [ngClass]="{ 'active': isActiveStates[2] }">
+                        <fa-icon [icon]="faSolidReply"></fa-icon>
+                        
+                    </button>
+                  </div>
+                <div>
+                    <button
+                        class="icon-button text-white fa-sm m-2 p-2 border-2 rounded-full"
+                        [ngClass]="{ 'active': isActiveStates[1] }"
+                        (click)="toggleIcon(1)">
+                        <fa-icon *ngIf="isIconStates[1]" [icon]="faHeartRegular"></fa-icon>
+                        <fa-icon *ngIf="!isIconStates[1]" [icon]="faHeartSolid"></fa-icon>
+                    </button>
+                  </div>
+            </div>     
+        </div>
+        <hr class="opacity-25 -z-0 mb-5">
+        <div class="flex flex-col ">
+            <p class="transform translate-x-10 delay-1000 opacity-0">Catégorie : {{ media?.typeDeMedia}}</p>
+            <p>Sortie le : {{ media?.dateDeSortie}}</p>
+            <p>Genre : Action, Rpg</p>
+            <p class="w-10/12">Resume : {{ media?.resume}}</p>
+        </div>
+    </div>
+    <div class="flex flex-col w-96">
+        <img class="w-96 h-64 z-10 object-cover" [src]="media?.image" alt="Image du media">
+        <div class="flex justify-between ">
+            <div class="border-l-2 border-b-2 border-t-2 p-2 border-customBorder hover:bg-[#111533] w-2/6 rounded-bl-3xl flex justify-center items-center">
+                <fa-icon class="text-white mr-2 text-xs" [icon]="faChevronLeft"></fa-icon>
+                <button class="">Precédent</button>
+            </div>
+            <div class="border-2 border-customBorder hover:bg-[#111533] flex justify-center w-2/6 items-center">
+                <button class="">Series</button>
+                <fa-icon class="text-white ml-2 text-xs" [icon]="faChevronUp"></fa-icon>
+            </div>
+            <div class="border-r-2 border-b-2 border-t-2 border-customBorder hover:bg-[#111533] w-2/6 rounded-br-3xl flex justify-center items-center">
+                <button class="">Suivant</button>
+                <fa-icon class="text-white ml-2 text-xs" [icon]="faChevronRight"></fa-icon>
+            </div>
+        </div>
+    </div>
+</div>
