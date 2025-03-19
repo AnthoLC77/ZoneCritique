@@ -24,7 +24,7 @@ Avant de commencer, assurez-vous d'avoir installé les outils suivants :
 
 ```bash
 # Cloner le projet
-cd backend
+cd zoneCritiqueBack
 
 # Configurer MySQL (si non utilisé via Docker)
 # Assurez-vous d'avoir une base de données MySQL nommée `epiczone_db`
@@ -39,7 +39,7 @@ mvn spring-boot:run
 
 ```bash
 # Cloner le projet
-cd frontend
+cd zoneCritiqueFront
 
 # Installer les dépendances
 npm install
