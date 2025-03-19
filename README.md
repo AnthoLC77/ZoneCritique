@@ -1,20 +1,20 @@
-README - Déploiement du Projet Angular + Spring Boot avec Docker
+# README - Déploiement du Projet Angular + Spring Boot avec Docker
 
-Prérequis
+## Prérequis
 
 Avant de commencer, assurez-vous d'avoir installé les outils suivants :
 
-Node.js v22.12.0 (Télécharger ici)
+- **Node.js** v22.12.0 ([Télécharger ici](https://nodejs.org/))
 
-Angular CLI v19.1.5 (installer avec npm install -g @angular/cli)
+- **Angular** CLI v19.1.5 (installer avec npm install -g @angular/cli)
 
-Java 21.0.5 (LTS) (Télécharger ici)
+- **Java** 21.0.5 (LTS) ([Télécharger ici](https://adoptium.net/))
 
-Maven (installé avec Java)
+- **Maven** (installé avec Java)
 
-MySQL (en local ou via Docker)
+- **MySQL** (en local ou via Docker)
 
-Docker (Installer Docker)
+- **Docker** ([Installer Docker](https://www.docker.com/get-started/))
 
 
 
